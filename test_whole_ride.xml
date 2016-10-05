@@ -1,0 +1,304 @@
+<scene>
+	<instance name="sphere" path="models/sphere" />
+	<instance name="box" path="models/box" />
+	<instance name="cylinder" path="models/cylinder" />
+	<instance name="cone" path="models/cone" />
+	<image name="white" path="whitetexture.png" />
+	<image name="earthmap" path="earthmap.png" />
+	<image name="checkerboard" path="checkerboard.png" />
+	<!-- Made by Dale Heuser -->
+	<!-- Must be at least 5’2” to ride, not recommended for people with heart conditions, pregnant women or the elderly! -->
+	<!-- Make sure your seatbelt is tightly fastened! -->
+			
+	<transform>
+		<set>
+			<scale>30 2 35</scale>
+			<translate>0 -20 0 </translate>
+		</set>
+		<object instanceof="box"  texture="earthmap">
+			<material>
+				<ambient>.2 .2 0</ambient>
+				<diffuse>.7 .7 0</diffuse>
+				<specular>.8 .8 0</specular>
+				<shininess>10</shininess>
+			</material>
+		</object>
+		<light>
+			<ambient>0.2 0.2 0.2</ambient>
+			<diffuse>0.2 0 0</diffuse>
+			<specular>1 0 0</specular>
+			<position>10 10 5 </position>
+		</light>
+	</transfrom>	
+
+	<transform name="ride_11">
+		<set>
+			<rotate> 90 0 0 1 </rotate>
+		</set>
+		
+		<group>
+			<transform>
+				<set>
+					<scale>1 20 1</scale>
+					<rotate> 90 0 0 1 </rotate>
+				</set>
+				<object instanceof="cylinder">
+					<material>
+						<ambient>0 .2 .2</ambient>
+						<diffuse>0 .7 .7</diffuse>
+						<specular>0 .8 .8</specular>
+						<shininess>10</shininess>
+					</material>
+				</object>
+			</transform>
+			<group name="wheel">
+				<transform>
+					<set>
+						<scale>2 2 2</scale>
+					</set>
+					<object instanceof="sphere">
+						<material>
+							<ambient>.2 0 .2</ambient>
+							<diffuse>.7 0 .7</diffuse>
+							<specular>.8 0 .8</specular>
+							<shininess>10</shininess>
+						</material>
+					</object>
+				</transfrom>
+				<transform>
+					<set>
+						<rotate> 90 1 0 0 </rotate>
+					</set>
+					<group name="arm">
+						<transform>
+							<set>
+								<scale>1 10 1</scale>
+							</set>
+							<object instanceof="cylinder" texture ="checkerboard">
+								<material>
+									<ambient>0 .2 0</ambient>
+									<diffuse>0 .7 0</diffuse>
+									<specular>0 .8 0</specular>
+									<shininess>10</shininess>
+								</material>
+							</object>
+						</transform>
+					
+						<transform name="move_seat_0">
+							<set>
+								<rotate> -90 0 0 1 </rotate>
+								<scale>1 1 1 </scale>
+								<translate>-1 11 0 </translate>
+							</set>
+							<group name="seat">
+								<transform name="bottom">
+									<set>
+										<scale>3 1 3 </scale>
+										<translate>0 0 0 </translate>
+									</set>
+								<object instanceof="box">
+									<material>
+										<ambient>0 .2 .3</ambient>
+										<diffuse>0 .7 .8</diffuse>
+										<specular>0 .9 .9</specular>
+										<shininess>10</shininess>
+									</material>
+									</object>
+								</transform>
+								<transform name="back">
+									<set>
+										<scale>1 4 3 </scale>
+										<translate>1 2 0 </translate>
+									</set>
+									<light>
+										<ambient>0 0 0.8</ambient>
+										<diffuse>0 0 0.8</diffuse>
+										<specular>0 0 0.8</specular>
+										<position>-2 0 0 </position>
+									</light>
+									<object instanceof="box">
+										<material>
+											<ambient>0 .2 .3</ambient>
+											<diffuse>0 .7 .8</diffuse>
+											<specular>0 .9 .9</specular>
+											<shininess>10</shininess>
+										</material>
+									</object>
+								</transform>	
+							</group>
+						</transform>
+					</group>
+				</transform>
+			<transform>
+				<set>
+					<rotate> 180 1 0 0 </rotate>
+				</set>
+				<group name="arm">
+					<transform>
+						<set>
+							<scale>1 10 1</scale>
+						</set>
+						<object instanceof="cylinder">
+							<material>
+								<ambient>0 .2 0</ambient>
+								<diffuse>0 .7 0</diffuse>
+								<specular>0 .8 0</specular>
+								<shininess>10</shininess>
+							</material>
+						</object>
+					</transform>
+					
+					<transform name="move_seat_1">
+						<set>
+							<rotate> -90 0 0 1 </rotate>
+							<scale>1 1 1 </scale>
+							<translate>-1 11 0 </translate>
+						</set>
+						<group name="seat">
+							<transform name="bottom">
+								<set>
+									<scale>3 1 3 </scale>
+									<translate>0 0 0 </translate>
+								</set>
+							<object instanceof="box">
+								<material>
+									<ambient>0 .2 .3</ambient>
+									<diffuse>0 .7 .8</diffuse>
+									<specular>0 .9 .9</specular>
+									<shininess>10</shininess>
+								</material>
+								</object>
+							</transform>
+							<transform name="back">
+								<set>
+									<scale>1 4 3 </scale>
+									<translate>1 2 0 </translate>
+								</set>
+								<object instanceof="box">
+									<material>
+										<ambient>0 .2 .3</ambient>
+										<diffuse>0 .7 .8</diffuse>
+										<specular>0 .9 .9</specular>
+										<shininess>10</shininess>
+									</material>
+								</object>
+							</transform>	
+						</group>
+					</transform>
+				</group>
+			</transform>
+			<transform>
+				<set>
+					<rotate> 270 1 0 0 </rotate>
+				</set>
+				<group name="arm">
+					<transform>
+						<set>
+							<scale>1 10 1</scale>
+						</set>
+						<object instanceof="cylinder">
+							<material>
+								<ambient>0 .2 0</ambient>
+								<diffuse>0 .7 0</diffuse>
+								<specular>0 .8 0</specular>
+								<shininess>10</shininess>
+							</material>
+						</object>
+					</transform>
+					
+					<transform name="move_seat_2">
+						<set>
+							<rotate> -90 0 0 1 </rotate>
+							<scale>1 1 1 </scale>
+							<translate>-1 11 0 </translate>
+						</set>
+						<group name="seat">
+							<transform name="bottom">
+								<set>
+									<scale>3 1 3 </scale>
+									<translate>0 0 0 </translate>
+								</set>
+							<object instanceof="box">
+								<material>
+									<ambient>0 .2 .3</ambient>
+									<diffuse>0 .7 .8</diffuse>
+									<specular>0 .9 .9</specular>
+									<shininess>10</shininess>
+								</material>
+								</object>
+							</transform>
+							<transform name="back">
+								<set>
+									<scale>1 4 3 </scale>
+									<translate>1 2 0 </translate>
+								</set>
+								<object instanceof="box">
+									<material>
+										<ambient>0 .2 .3</ambient>
+										<diffuse>0 .7 .8</diffuse>
+										<specular>0 .9 .9</specular>
+										<shininess>10</shininess>
+									</material>
+								</object>
+							</transform>	
+						</group>
+					</transform>
+				</group>
+			</transform>
+				<group name="arm">
+					<transform>
+						<set>
+							<scale>1 10 1</scale>
+						</set>
+						<object instanceof="cylinder">
+							<material>
+								<ambient>0 .2 0</ambient>
+								<diffuse>0 .7 0</diffuse>
+								<specular>0 .8 0</specular>
+								<shininess>10</shininess>
+							</material>
+						</object>
+					</transform>
+					
+					<transform name="move_seat_3">
+						<set>
+							<rotate> -90 0 0 1 </rotate>
+							<scale>1 1 1 </scale>
+							<translate>-1 11 0 </translate>
+						</set>
+						<group name="seat">
+							<transform name="bottom">
+								<set>
+									<scale>3 1 3 </scale>
+									<translate>0 0 0 </translate>
+								</set>
+							<object instanceof="box">
+								<material>
+									<ambient>0 .2 .3</ambient>
+									<diffuse>0 .7 .8</diffuse>
+									<specular>0 .9 .9</specular>
+									<shininess>10</shininess>
+								</material>
+								</object>
+							</transform>
+							<transform name="back">
+								<set>
+									<scale>1 4 3 </scale>
+									<translate>1 2 0 </translate>
+								</set>
+								<object instanceof="box">
+									<material>
+										<ambient>0 .2 .3</ambient>
+										<diffuse>0 .7 .8</diffuse>
+										<specular>0 .9 .9</specular>
+										<shininess>10</shininess>
+									</material>
+								</object>
+							</transform>	
+						</group>
+					</transform>
+				</group>
+			</group>
+		</group>
+	</transform>
+</scene>

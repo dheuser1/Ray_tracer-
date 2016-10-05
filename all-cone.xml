@@ -1,0 +1,60 @@
+<scene>
+	<image name="white" path="whitetexture.png" />
+	<light>
+		<ambient>.1 .1 .1</ambient>
+		<diffuse>.4 .4 .4</diffuse>
+		<specular>0 0 0</specular>
+		<position>0 0 100 </position>
+	</light>
+	<group>
+	
+		<group name="maze" from="maze_rides.xml">
+	</group>
+		<transform>
+			<set>			
+				<translate> 30 20 17 </translate>
+				<rotate> 90 1 0 0 </rotate>
+			</set>
+			<group name="ride" from="test_whole_ride.xml">
+			</group>
+		</transform> 
+		
+		<transform>
+			<set>	
+				<scale> .3 .3 .3 </scale>
+				<translate> -43 19 -23 </translate>
+				<rotate> 90 1 0 0 </rotate>
+			</set>
+			<group name="ride2" from="jonride.xml">
+			</group>
+		</transform>
+		<transform name="spot">
+			<set>
+				<scale> 2 2 2 </scale>
+				<translate> 0 0 -1 </translate>
+			</set>
+			<object instanceof="box">
+				<material>
+					<ambient>0 .2 0</ambient>
+					<diffuse>0 .7 0</diffuse>
+					<specular>0 .8 0</specular>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+		<transform name="flag">
+			<set>
+				<scale> .5 .5 5 </scale>
+				<translate> 0 0 2.5 </translate>
+			</set>
+			<object instanceof="box">
+				<material>
+					<ambient>0 .2 .2</ambient>
+					<diffuse>0 .7 .7</diffuse>
+					<specular>0 .8 .8</specular>
+					<shininess>10</shininess>
+				</material>
+			</object>
+		</transform>
+	</group>
+</scene>

@@ -1,0 +1,397 @@
+<scene>
+	<instance name="sphere" path="models/sphere" />
+	<instance name="box" path="models/box" />
+	<instance name="cylinder" path="models/cylinder" />
+	<instance name="cone" path="models/cone" />
+	<image name="checkerboard" path="checkerboard.png" />
+	<image name="text" path="texture.png" />
+	<transform name="testname">
+		<set> 
+			<translate> 0 -105 0 </translate>
+			<scale> .5 .5 .5 </scale>
+		</set>
+	<group>	
+	<transform><!-- make support beam -->
+		<set> 
+			<scale> 5 130 5 </scale>
+			<translate> 40 40 0 </translate>
+		</set>
+		
+		<object instanceof="box">
+			<material>
+				<ambient>.2 0 0</ambient>
+				<diffuse>.8 0 0</diffuse>
+				<specular>.8 0 0</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.5 </absorption>
+				<reflection>0.1</reflection>
+				<transparency>0.4</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>	
+	</transform>
+	<transform><!-- make support beam -->
+		<set> 
+			<scale> 5 130 5 </scale>
+			<translate> -40 40 0 </translate>
+		</set>
+		<light>
+					<ambient>1 1 1</ambient>
+					<diffuse>0 0 0</diffuse>
+					<specular>0.5 0 0</specular>
+					<position>-2 0 0 </position>
+		</light>
+		<object instanceof="box" texture="checkerboard">
+			<material>
+				<ambient>.2 0 0</ambient>
+				<diffuse>.8 0 0</diffuse>
+				<specular>.8 0 0</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.5 </absorption>
+				<reflection>0.1</reflection>
+				<transparency>0.4</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>	
+	</transform>
+	<transform name ="wheeltransform"><!-- grab this one to animate wheel -->
+		<set>
+			<translate> 0 100 0 </translate>
+		</set>
+	
+	<group name="wheel">
+	<transform>
+		<set>
+			<translate> 0 -50 0 </translate>
+		</set>	
+	<group name="ridearm">
+		<transform><!-- arm of ride -->
+			<set>
+				<scale> 3 100 3 </scale>
+			</set>
+			<object instanceof="box" texture="checkerboard">
+				<material>
+					<ambient>.2 0 0</ambient>
+					<diffuse>.8 0 0</diffuse>
+					<specular>.8 0 0</specular>
+					<shininess>5</shininess>
+					<!--the following four will be relevant in ray tracer -->
+					<absorption>0.5 </absorption>
+					<reflection>0.1</reflection>
+					<transparency>0.4</transparency>
+					<refractive>1.2</refractive>
+				</material>
+			</object>
+		</transform>
+		<transform name ="seattransformone"> <!-- grab this node to animate -->
+		<set>
+			<translate> 0 -50 -7 </translate>
+		</set>
+		<group name="seat">
+			<transform><!--front of chair -->
+				<set>
+					<scale> 10 10 10 </scale>
+				</set>	
+				<object instanceof="box" texture="checkerboard">
+					<material>
+						<ambient>0 0.2 0</ambient>
+						<diffuse>0 0.8 0</diffuse>
+						<specular>0 0.8 0</specular>
+						<shininess>5</shininess>
+						<!--the following four will be relevant in ray tracer -->
+						<absorption>0.5 </absorption>
+						<reflection>0.1</reflection>
+						<transparency>0.4</transparency>
+						<refractive>1.2</refractive>
+					</material>
+				</object>	
+			</transform>
+			<transform><!-- back of chair -->
+				<set>
+					<scale> 10 25 4 </scale>
+					<translate> 0 7 4 </translate>
+				</set>	
+				<object instanceof="box" texture="checkerboard">
+					<material>
+						<ambient>0 0.2 0</ambient>
+						<diffuse>0 0.8 0</diffuse>
+						<specular>0 0.8 0</specular>
+						<shininess>5</shininess>
+						<!--the following four will be relevant in ray tracer -->
+						<absorption>0.5 </absorption>
+						<reflection>0.1</reflection>
+						<transparency>0.4</transparency>
+						<refractive>1.2</refractive>
+					</material>
+				</object>
+			</transform>
+		</group>
+		</transform>
+	</group>
+	</transform>
+	<transform>
+		<set>
+			<translate> 0 -50 0 </translate>
+			<rotate> 90 1 0 0 </rotate>
+		</set>
+		<group>
+			<transform><!-- arm of ride -->
+				<set>
+					<scale> 3 100 3 </scale>
+				</set>
+				
+				<object instanceof="box" texture="checkerboard">
+					<material>
+						<ambient>.2 0 0</ambient>
+						<diffuse>.8 0 0</diffuse>
+						<specular>.8 0 0</specular>
+						<shininess>5</shininess>
+						<!--the following four will be relevant in ray tracer -->
+						<absorption>0.5 </absorption>
+						<reflection>0.1</reflection>
+						<transparency>0.4</transparency>
+						<refractive>1.2</refractive>
+					</material>
+				</object>
+			</transform>
+			<transform name ="seattransformtwo"> <!-- grab this node to animate -->
+			<set>
+				<translate> 0 -50 -7 </translate>
+			</set>
+			<group name="seat">
+				<transform><!--front of chair -->
+					<set>
+						<scale> 10 10 10 </scale>
+					</set>	
+					<object instanceof="box" texture="text">
+						<material>
+							<ambient>0.2 0.2 0.2</ambient>
+							<diffuse>0.8 0.8 0.8</diffuse>
+							<specular>0.8 0.8 0.8</specular>
+							<shininess>5</shininess>
+							<!--the following four will be relevant in ray tracer -->
+							<absorption>0.5 </absorption>
+							<reflection>0.1</reflection>
+							<transparency>0.4</transparency>
+							<refractive>1.2</refractive>
+						</material>
+					</object>	
+				</transform>
+				<transform><!-- back of chair -->
+					<set>
+						<scale> 10 25 4 </scale>
+						<translate> 0 7 4 </translate>
+					</set>	
+					<light>
+						<ambient>0 0 0</ambient>
+						<diffuse>0 0 0</diffuse>
+						<specular>0 0.4 0.4</specular>
+						<position>0 0 -2 </position>
+					</light>
+					<object instanceof="box" texture="text">
+						<material>
+							<ambient>0.2 0.2 0.2</ambient>
+							<diffuse>0.8 0.8 0.8</diffuse>
+							<specular>0.8 0.8 0.8</specular>
+							<shininess>5</shininess>
+							<!--the following four will be relevant in ray tracer -->
+							<absorption>0.5 </absorption>
+							<reflection>0.1</reflection>
+							<transparency>0.4</transparency>
+							<refractive>1.2</refractive>
+						</material>
+					</object>
+				</transform>
+			</group>
+			</transform>
+	</group>
+	</transform>
+	<transform>
+		<set>
+			<translate> 0 -50 0 </translate>
+			<rotate> 180 1 0 0 </rotate>
+		</set>
+		<group>
+				<transform><!-- arm of ride -->
+					<set>
+						<scale> 3 100 3 </scale>
+					</set>
+					<object instanceof="box" texture="checkerboard">
+						<material>
+							<ambient>.2 0 0</ambient>
+							<diffuse>.8 0 0</diffuse>
+							<specular>.8 0 0</specular>
+							<shininess>5</shininess>
+							<!--the following four will be relevant in ray tracer -->
+							<absorption>0.5 </absorption>
+							<reflection>0.1</reflection>
+							<transparency>0.4</transparency>
+							<refractive>1.2</refractive>
+						</material>
+					</object>
+				</transform>
+				<transform name ="seattransformthree"> <!-- grab this node to animate -->
+				<set>
+					<translate> 0 -50 -7 </translate>
+				</set>
+				<group name="seat">
+					<transform><!--front of chair -->
+						<set>
+							<scale> 10 10 10 </scale>
+						</set>	
+						<object instanceof="box" texture="checkerboard">
+							<material>
+								<ambient>0 0.2 0</ambient>
+								<diffuse>0 0.8 0</diffuse>
+								<specular>0 0.8 0</specular>
+								<shininess>5</shininess>
+								<!--the following four will be relevant in ray tracer -->
+								<absorption>0.5 </absorption>
+								<reflection>0.1</reflection>
+								<transparency>0.4</transparency>
+								<refractive>1.2</refractive>
+							</material>
+						</object>	
+					</transform>
+					<transform><!-- back of chair -->
+						<set>
+							<scale> 10 25 4 </scale>
+							<translate> 0 7 4 </translate>
+						</set>	
+						<object instanceof="box" texture="checkerboard">
+							<material>
+								<ambient>0 0.2 0</ambient>
+								<diffuse>0 0.8 0</diffuse>
+								<specular>0 0.8 0</specular>
+								<shininess>5</shininess>
+								<!--the following four will be relevant in ray tracer -->
+								<absorption>0.5 </absorption>
+								<reflection>0.1</reflection>
+								<transparency>0.4</transparency>
+								<refractive>1.2</refractive>
+							</material>
+						</object>
+					</transform>
+				</group>
+				</transform>
+	</group>
+	</transform>
+	<transform>
+		<set>
+			<translate> 0 -50 0 </translate>
+			<rotate> 270 1 0 0 </rotate>
+		</set>
+		<group>
+				<transform><!-- arm of ride -->
+					<set>
+						<scale> 3 100 3 </scale>
+					</set>
+					<object instanceof="box" texture="checkerboard">
+						<material>
+							<ambient>.2 0 0</ambient>
+							<diffuse>.8 0 0</diffuse>
+							<specular>.8 0 0</specular>
+							<shininess>5</shininess>
+							<!--the following four will be relevant in ray tracer -->
+							<absorption>0.5 </absorption>
+							<reflection>0.1</reflection>
+							<transparency>0.4</transparency>
+							<refractive>1.2</refractive>
+						</material>
+					</object>
+				</transform>
+				<transform name ="seattransformfour"> <!-- grab this node to animate -->
+				<set>
+					<translate> 0 -50 -7 </translate>
+				</set>
+				<group name="seat">
+					<transform><!--front of chair -->
+						<set>
+							<scale> 10 10 10 </scale>
+						</set>	
+						<object instanceof="box" texture="checkerboard">
+							<material>
+								<ambient>0 0.2 0</ambient>
+								<diffuse>0 0.8 0</diffuse>
+								<specular>0 0.8 0</specular>
+								<shininess>5</shininess>
+								<!--the following four will be relevant in ray tracer -->
+								<absorption>0.5 </absorption>
+								<reflection>0.1</reflection>
+								<transparency>0.4</transparency>
+								<refractive>1.2</refractive>
+							</material>
+						</object>	
+					</transform>
+					<transform><!-- back of chair -->
+						<set>
+							<scale> 10 25 4 </scale>
+							<translate> 0 7 4 </translate>
+						</set>	
+						<object instanceof="box" texture="checkerboard">
+							<material>
+								<ambient>0 0.2 0</ambient>
+								<diffuse>0 0.8 0</diffuse>
+								<specular>0 0.8 0</specular>
+								<shininess>5</shininess>
+								<!--the following four will be relevant in ray tracer -->
+								<absorption>0.5 </absorption>
+								<reflection>0.1</reflection>
+								<transparency>0.4</transparency>
+								<refractive>1.2</refractive>
+							</material>
+						</object>
+					</transform>
+				</group>
+				</transform>
+	</group>
+	</transform>
+	<transform><!-- center of wheel -->
+		<set>
+			<rotate> 90 0 0 1 </rotate>
+			<scale> 20 20 20 </scale>
+			<translate> 10 0 0 </translate>
+			
+		</set>
+		<object instanceof="cylinder" texture="text">
+			<material>
+				<ambient>0.2 0.2 0.2</ambient>
+				<diffuse>0.8 0.8 0.8</diffuse>
+				<specular>0.8 0.8 0.8</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.5 </absorption>
+				<reflection>0.1</reflection>
+				<transparency>0.4</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+		</transform>
+	<transform><!-- center of wheel -->
+		<set>
+			<rotate> 90 0 0 1 </rotate>
+			<scale> 80 5 5 </scale>
+			<translate> 40 0 0 </translate>
+			
+		</set>
+		<object instanceof="cylinder" texture="checkerboard">
+			<material>
+				<ambient>0 0.2 0</ambient>
+				<diffuse>0 0.8 0</diffuse>
+				<specular>0 0.8 0</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.5 </absorption>
+				<reflection>0.1</reflection>
+				<transparency>0.4</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+		</transform>
+	</group>
+	</transform>
+	</group>
+	</transform>
+</scene>

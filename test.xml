@@ -1,0 +1,254 @@
+<scene>
+	<image name="white" path="whitetexture.png" />
+	<instance name="box" path="models/box" />
+	<instance name="sphere" path="models/sphere" />
+	<image name="checkerboard" path="checkerboard.png" />
+	<image name="pcmr" path="pcmr.png" />
+	<image name="earthmap" path="earthmap.png" />
+	<image name="sun" path="sun.png" />
+	<image name="mars" path="mars.png" />
+	<image name="jupiter" path="jupiter.png" />
+	<image name="borg" path="borg.png" />
+	
+	
+	<light>
+    	    <ambient>.8 .8 .8</ambient>
+    	    <diffuse>0.1 .1 .1</diffuse>
+    	    <specular>.1 .1 .1</specular>
+    	    <position>-150 20 100 </position>
+        </light>
+	<light>
+    	    <ambient>.8 .8 .8</ambient>
+    	    <diffuse>0.1 .1 .1</diffuse>
+    	    <specular>.1 .1 .1</specular>
+    	    <position>-150 200 100 </position>
+        </light>
+	
+        <transform>
+		<set> 
+			<scale> 30 30 30 </scale>
+			<translate>0 0 50 </translate>
+
+		</set>
+		<object instanceof="sphere">
+			<material>
+				<ambient>.5 .5 .5</ambient>
+				<diffuse>.2 .2 .2</diffuse>
+				<specular>.3 .3 .3</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0 </absorption>
+				<reflection>1</reflection>
+				<transparency>0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+ 	<transform>
+		<set> 
+			<rotate> 90 1 0 0 </rotate>
+			<scale> 15 15 15 </scale>
+			<translate>-20 50 50 </translate>
+
+		</set>
+		<object instanceof="sphere" texture="earthmap">
+			<material>
+				<ambient>.5 .5 .5</ambient>
+				<diffuse>.2 .2 .2</diffuse>
+				<specular>.3 .3 .3</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.5 </absorption>
+				<reflection>0.5</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<rotate> 90 1 0 0 </rotate>
+			<scale> 10 10 10 </scale>
+			<translate>-40 -50 50 </translate>
+
+		</set>
+		<object instanceof="sphere" texture="mars">
+			<material>
+				<ambient>.5 .5 .5</ambient>
+				<diffuse>.2 .2 .2</diffuse>
+				<specular>.3 .3 .3</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.8 </absorption>
+				<reflection>0.2</reflection>
+				<transparency>0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<rotate> 90 1 0 0 </rotate>
+			<scale> 10 10 10 </scale>
+			<translate>-50 70 50 </translate>
+			
+
+		</set>
+		<object instanceof="sphere" texture="jupiter">
+			<material>
+				<ambient>.5 .5 .5</ambient>
+				<diffuse>.2 .2 .2</diffuse>
+				<specular>.3 .3 .3</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.8 </absorption>
+				<reflection>0.2</reflection>
+				<transparency>0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<scale> 30 30 30 </scale>
+			<translate>25 45 50 </translate>
+
+		</set>
+		<object instanceof="box" texture="checkerboard">
+			<material>
+				<ambient>.8 .8 .8</ambient>
+				<diffuse>.8 .8 .8</diffuse>
+				<specular>.4 .4 .4</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.9 </absorption>
+				<reflection>0.1</reflection>
+				<transparency>0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+
+	<transform>
+		<set> 
+			<scale> 30 30 30 </scale>
+			<translate>25 45 50 </translate>
+
+		</set>
+		<object instanceof="box" texture="checkerboard">
+			<material>
+				<ambient>.8 .8 .8</ambient>
+				<diffuse>.8 .8 .8</diffuse>
+				<specular>.4 .4 .4</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>0.9 </absorption>
+				<reflection>0.1</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	
+	<transform>
+		<set> 
+			<scale> 700 700 700 </scale>
+			<translate>0 0 -350 </translate>
+		</set>
+		<object instanceof="box">
+			<material>
+				<ambient>.8 .8 .8</ambient>
+				<diffuse>.1 .1 .1</diffuse>
+				<specular>.1 .1 .1</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>.3 </absorption>
+				<reflection>.7</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<scale> 700 700 50 </scale>
+			<translate>0 0 350 </translate>
+
+		</set>
+		<object instanceof="box">
+			<material>
+				<ambient>.8 0 0</ambient>
+				<diffuse>.1 0 0</diffuse>
+				<specular>.1 0 0</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>.3 </absorption>
+				<reflection>.7</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<scale> 10 10 10 </scale>
+			<translate>-50 -40 30 </translate>
+
+		</set>
+		<object instanceof="box" texture="borg">
+			<material>
+				<ambient>.8 .8 .8</ambient>
+				<diffuse>.1 .1 .1</diffuse>
+				<specular>.1 .1 .1</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>1 </absorption>
+				<reflection>0</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<rotate> 37 1 1 0 </rotate>
+			<scale> 10 10 10 </scale>
+			<translate>-20 -20 80 </translate>
+
+		</set>
+		<object instanceof="box" texture="borg">
+			<material>
+				<ambient>.8 .8 .8</ambient>
+				<diffuse>.1 .1 .1</diffuse>
+				<specular>.1 .1 .1</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>1 </absorption>
+				<reflection>0</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+	<transform>
+		<set> 
+			<rotate> 57 0 1 1 </rotate>
+			<scale> 10 10 10 </scale>
+			<translate>-20 20 20 </translate>
+
+		</set>
+		<object instanceof="box" texture="borg">
+			<material>
+				<ambient>.8 .8 .8</ambient>
+				<diffuse>.1 .1 .1</diffuse>
+				<specular>.1 .1 .1</specular>
+				<shininess>5</shininess>
+				<!--the following four will be relevant in ray tracer -->
+				<absorption>1 </absorption>
+				<reflection>0</reflection>
+				<transparency>0.0</transparency>
+				<refractive>1.2</refractive>
+			</material>
+		</object>
+	</transform>
+</scene>

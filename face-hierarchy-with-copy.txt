@@ -1,0 +1,92 @@
+<scene>
+	<instance name="sphere" path="models/sphere" />
+	<instance name="box" path="models/box" />
+	<instance name="cylinder" path="models/cylinder" />
+	<instance name="cone" path="models/cone" />
+	<transform>
+        <set>
+			<scale> 50 5 50 </scale>
+		</set>		
+        <object instanceof="box">
+			<material>
+				<color>0.5 0.5 0.5</color>		
+			</material>
+        </object>
+	</transform>
+
+
+    <transform>
+		<set>
+			<translate>-25 25 0 </translate>
+		</set>
+        <group name="joker">
+			<transform name="face">
+				<set>
+					<scale> 20 25 20 </scale>
+                </set>
+				<object instanceof="sphere">
+					<material>
+						<color> 1 1 0.8</color>
+					</material>                    
+				</object>
+			</transform>
+			
+			<transform name="lefteye">
+				<set>
+				    <scale> 3 4 3 </scale>
+                    <translate>7 15 12 </translate>                
+				</set>
+				<object instanceof="sphere">
+                    <material>
+						<color> 1 0 0</color>
+                    </material>
+				</object>
+            </transform>
+
+			<transform name="righteye">
+                <set>
+					<scale> 3 4 3 </scale>
+                    <translate>-7 15 12 </translate>
+                </set>    
+				<object instanceof="sphere">
+					<material>
+						<color> 0 0 0</color>
+					</material>
+                </object>    
+            </transform>
+
+            <transform name="nose">
+				<set>
+					<scale>5 20 5</scale>
+					<rotate>90 1 0 0</rotate>
+					<translate>0 10 10</translate>                    
+				</set>
+				
+				<object instanceof="cylinder">
+                    <material>
+						<color>1 0 0</color>
+					</material>
+                </object>
+            </transform>
+			
+            <transform name="hat">
+				<set>
+					<scale>10 25 10</scale>
+					<translate>0 20 0</translate>
+				</set>
+				<object instanceof="cone">
+					<material>
+						<color>1 0 1</color>
+					</material>
+				</object>
+			</transform>
+        </group>
+    </transform>
+	<transform>
+		<set>
+			<scale> 0.5 0.5 0.5 </scale>
+			<translate>25 25 0 </translate>
+		</set>
+        <group name="secondjoker" copyof="joker" />
+	</transform>	
+</scene>
